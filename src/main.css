@@ -857,7 +857,7 @@ body .boddy-img__hide {
       display: grid;
     }
     .cart-item {
-        max-height: 69px;
+        max-height: 75px;
         display: inline-grid;
         grid-template-columns: 10% 60% 20% 10%;
         align-items: center;
@@ -896,9 +896,9 @@ body .boddy-img__hide {
               font-weight: 600;
             }
 
-            #size-select {
-              margin-left: 10px;
-              font-size: 3vmin;
+            .size-select {
+              margin-left: 5px;
+              font-size: 4vmin;
             }
           }
         }
