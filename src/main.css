@@ -157,7 +157,7 @@ body {
 
 .main__wrap {
   position: relative;
-  background: url(../src/img/background.png) center center no-repeat;
+  background: url(/img/background.png) center center no-repeat;
   background-size: cover;
   margin: 0 auto;
   min-height: 600px;
@@ -336,7 +336,7 @@ body {
 .main__wrap-catalog {
   
   display: block;
-  background: url(/src/img/background.png) center center no-repeat;
+  background: url(/img/background.png) center center no-repeat;
   background-size: cover;
 
   
@@ -452,7 +452,7 @@ body {
 .main__wrap-sizes {
   position: relative;
   display: flex;
-  background: url(/src/img/background.png) center center no-repeat;
+  background: url(/img/background.png) center center no-repeat;
   background-size: cover;
   margin: 0 auto;
 
