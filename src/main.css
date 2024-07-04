@@ -857,6 +857,7 @@ body .boddy-img__hide {
       display: grid;
     }
     .cart-item {
+        max-height: 75px;
         display: inline-grid;
         grid-template-columns: 10% 60% 20% 10%;
         align-items: center;
@@ -922,7 +923,7 @@ body .boddy-img__hide {
       }
     span {
       width: 100%;
-      height: 2px;
+      max-height: 2px;
       background-color: #000000;
       padding: 1px;
     }
