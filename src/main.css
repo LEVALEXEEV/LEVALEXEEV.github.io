@@ -852,7 +852,7 @@ body .boddy-img__hide {
     min-width: 100%;
     display: grid;
 
-    article {
+    .cart-item__wrapper {
       display: grid;
     }
     .cart-item {
@@ -1222,7 +1222,7 @@ body .boddy-img__hide {
 
   .cart-item__list {
     width: 100%;
-    article {
+    .cart-item__wrapper {
       margin-bottom: 10px;
       display: grid;
     }

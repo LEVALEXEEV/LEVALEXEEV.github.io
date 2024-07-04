@@ -50,7 +50,7 @@ function CartPage(): JSX.Element {
                         (cart.length != 0)
                         ?
                             cart.map(item => (
-                                <article key={item.id}>
+                                <div className="cart-item__wrapper" key={item.id}>
                                     <div className="cart-item" >
                                         <div className="item-cart__preview">
                                             <img src={item.previewImages[0]}/>
@@ -70,7 +70,7 @@ function CartPage(): JSX.Element {
                                         <div className="item-right"><img src="cross.svg" width={'25vmin'} onClick={() => dispatch(setCart(removeItemFromArray(item.id, cart)))}/></div>
                                     </div>
                                     <span></span>
-                                </article>
+                                </div>
                             ))
                         :
                             <div className="empty-cart"><i>EMPTY</i></div>
