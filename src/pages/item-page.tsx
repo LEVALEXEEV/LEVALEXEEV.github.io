@@ -61,7 +61,7 @@ function ItemPage(): JSX.Element {
                         {indexes.map((i) => (<div key={item?.article + `${i}`} className={"slides slide" + `${i}`}><img src={item?.previewImages[i-1]}/></div>))}
                     </div>
                     <div className="controls">
-                        {indexes.map((i) => (<label key={item?.article + `${i}`} htmlFor={"slide" + `${i}`} style={(device)? {width: '40px', height: '40px'} : {width: '60px', height: '60px'}} onClick={() => setActiveImg(i)}><img src={item?.previewImages[i-1]}/></label>))}
+                        {indexes.map((i) => (<label key={item?.article + `${i}`} htmlFor={"slide" + `${i}`} style={(device)? {width: '40px', height: '40px'} : {width: '60px', height: '60px'}} onClick={() => setActiveImg(i)}><img src={'../'+item?.previewImages[i-1]}/></label>))}
                     </div>
                 </div>
                 <label className="back__button" htmlFor={"slide" + (activeImg-1)}><img src="arrow-prev-icon.svg" width={35}/></label>
