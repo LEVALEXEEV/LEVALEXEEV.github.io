@@ -157,7 +157,7 @@ body {
 
 .main__wrap {
   position: relative;
-  background: url(../img/background.png) center center no-repeat;
+  background: url(../src/img/background.png) center center no-repeat;
   background-size: cover;
   margin: 0 auto;
   min-height: 600px;
