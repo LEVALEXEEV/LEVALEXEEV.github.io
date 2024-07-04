@@ -12,7 +12,7 @@ function Header({backLink}: HeaderProps): JSX.Element {
         <header className="header">
           <div className='backlink__div'>
             <Link to="/">
-              <img src="img/icon.png" width={80}/>
+              <img src="{{site.url}}/img/icon.png" width={80}/>
             </Link>
             {
               (backLink) 
