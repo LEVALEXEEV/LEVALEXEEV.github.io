@@ -11,7 +11,7 @@ import Background from "../components/background";
 function CartPage(): JSX.Element {
     const dispatch = useAppDispatch();
     const cart = useAppSelector(store => store.cartItems);
-
+    console.log(cart);
     const calculateTotalPrice = () => (cart.reduce((partialSum, a) => partialSum + a.price, 0));
 
     const device = useAppSelector(store => store.device);
