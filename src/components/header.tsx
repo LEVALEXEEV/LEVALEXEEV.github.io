@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './hamburher-menu';
-import './icon.jpg';
 
 type HeaderProps = {
   backLink?: string
@@ -13,7 +12,7 @@ function Header({backLink}: HeaderProps): JSX.Element {
         <header className="header">
           <div className='backlink__div'>
             <Link to="/">
-              <img src="./icon.jpg" width={80}/>
+              <img src="src/img/icon.png" width={80}/>
             </Link>
             {
               (backLink) 
