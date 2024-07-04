@@ -820,7 +820,7 @@ body .boddy-img__hide {
 
 .order__wrap {
   position: relative;
-    z-index: 2;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -857,7 +857,6 @@ body .boddy-img__hide {
       display: grid;
     }
     .cart-item {
-        max-height: 75px;
         display: inline-grid;
         grid-template-columns: 10% 60% 20% 10%;
         align-items: center;
