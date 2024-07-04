@@ -6,11 +6,6 @@
       "src": "icon.png",
       "sizes": "40x40",
       "type": "image/png"
-    },
-    {
-      "src": "background.png",
-      "sizes": "40x40",
-      "type": "image/png"
     }
   ],
   "start_url": ".",
