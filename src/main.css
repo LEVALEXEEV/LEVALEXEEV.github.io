@@ -854,7 +854,8 @@ body .boddy-img__hide {
     display: grid;
 
     .cart-item__wrapper {
-      display: grid;
+      display: flex;
+            flex-direction: column;
     }
     .cart-item {
         max-height: 75px;
