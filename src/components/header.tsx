@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './hamburher-menu';
+import './icon.jpg';
 
 type HeaderProps = {
   backLink?: string
