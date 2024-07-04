@@ -68,7 +68,7 @@ function CartPage(): JSX.Element {
                                         <div className="item-middle">{item.price}</div>
                                         <div className="item-right"><img src="cross.svg" width={'25vmin'} onClick={() => dispatch(setCart(removeItemFromArray(item.id, cart)))}/></div>
                                     </div>
-                                    <span></span>
+
                                 </div>
                             ))
                         :
