@@ -27,7 +27,7 @@ export const Videos: VideoType[] = [
 
 export const Items: ItemType[] = [
     {
-        previewImages: ['phelps-hands-fw.jpg', 'phelps-hands-bc.jpg', 'sizes-tables/longsleeve-net.jpg'],
+        previewImages: ['phelps-hands-fw.jpg', 'phelps-hands-bc.jpg', 'longsleeve-net.jpg'],
         price: 2000,
         article: 'phelps-hands',
         title: 'phelps-hands',
