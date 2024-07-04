@@ -858,7 +858,6 @@ body .boddy-img__hide {
     .cart-item {
         min-width: inherit;
         display: inline-grid;
-        min-height: 80px;
         grid-template-columns: 10% 60% 20% 10%;
         align-items: center;
 
