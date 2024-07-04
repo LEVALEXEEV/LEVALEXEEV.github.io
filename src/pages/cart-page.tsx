@@ -11,7 +11,6 @@ import Background from "../components/background";
 function CartPage(): JSX.Element {
     const dispatch = useAppDispatch();
     const cart = useAppSelector(store => store.cartItems);
-    console.log(cart);
     const calculateTotalPrice = () => (cart.reduce((partialSum, a) => partialSum + a.price, 0));
 
     const device = useAppSelector(store => store.device);
@@ -32,7 +31,7 @@ function CartPage(): JSX.Element {
     }
 
     const handleSizeChange = (target: HTMLSelectElement) => {
-        const id = target.classList[0];
+        const id = target.classList[1];
         const newItem = {...findItemInArray(id, cart)[0], selectedSize: target.value};
         const newCart = removeItemFromArray(id, cart);
         newCart.push(newItem);
@@ -59,7 +58,7 @@ function CartPage(): JSX.Element {
                                             <h3>{item.title}</h3>
                                             <div className="cart-size-selector__wrap">
                                                 <label htmlFor={'size-select'+item.id}>Size</label>
-                                                <select className = "size-select" name="drop-down" id={'size-select'+item.id} defaultValue={item.selectedSize} onChange={(evt) => handleSizeChange(evt.target)}>
+                                                <select className = {'size-select '+item.id} name="drop-down" id={'size-select'+item.id} defaultValue={item.selectedSize} onChange={(evt) => handleSizeChange(evt.target)}>
                                                     {item.sizes.map(size => (
                                                         <option value={size} key={size} >{size}</option>
                                                     ))}
