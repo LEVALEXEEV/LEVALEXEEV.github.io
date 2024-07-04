@@ -851,7 +851,8 @@ body .boddy-img__hide {
   .cart-item__list {
     position: relative;
     min-width: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     .cart-item__wrapper {
       display: flex;
