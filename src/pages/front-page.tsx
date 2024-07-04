@@ -41,7 +41,7 @@ function FrontPage(): JSX.Element {
                           : {opacity: '0', backgroundColor: 'none'}
                         }
                       >
-                        <img  src={(isMute) ? "img/mute-icon-on.svg" : "img/mute-icon-off.svg"} width="16px" />
+                        <img  src={(isMute) ? "mute-icon-on.svg" : "mute-icon-off.svg"} width="16px" />
                       </div>
                     </label>
                   </div>

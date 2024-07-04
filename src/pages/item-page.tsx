@@ -58,14 +58,14 @@ function ItemPage(): JSX.Element {
                 <div className="wrapper">
                     {indexes.map((i) => (<input key={item?.article + `${i}`} type="radio" name="point" id={"slide" + `${i}`} defaultChecked={i == 1} onChange={() => setActiveImg(i)}></input>))}
                     <div className="slider">
-                        {indexes.map((i) => (<div key={item?.article + `${i}`} className={"slides slide" + `${i}`}><img src={"img/items/" + item?.previewImages[i-1]}/></div>))}
+                        {indexes.map((i) => (<div key={item?.article + `${i}`} className={"slides slide" + `${i}`}><img src={item?.previewImages[i-1]}/></div>))}
                     </div>
                     <div className="controls">
-                        {indexes.map((i) => (<label key={item?.article + `${i}`} htmlFor={"slide" + `${i}`} style={(device)? {width: '40px', height: '40px'} : {width: '60px', height: '60px'}} onClick={() => setActiveImg(i)}><img src={"img/items/" + item?.previewImages[i-1]}/></label>))}
+                        {indexes.map((i) => (<label key={item?.article + `${i}`} htmlFor={"slide" + `${i}`} style={(device)? {width: '40px', height: '40px'} : {width: '60px', height: '60px'}} onClick={() => setActiveImg(i)}><img src={item?.previewImages[i-1]}/></label>))}
                     </div>
                 </div>
-                <label className="back__button" htmlFor={"slide" + (activeImg-1)}><img src="img/arrow-prev-icon.svg" width={35}/></label>
-                <label className="forward__button" htmlFor={"slide" + (activeImg+1)}><img src="img/arrow-next-icon.svg" width={35}/></label>
+                <label className="back__button" htmlFor={"slide" + (activeImg-1)}><img src="arrow-prev-icon.svg" width={35}/></label>
+                <label className="forward__button" htmlFor={"slide" + (activeImg+1)}><img src="arrow-next-icon.svg" width={35}/></label>
             </li>
             <li className="item-description__wrap" style={(device)? {maxWidth: '12em', minWidth: '10.5em'} : {minWidth: '500px'}}>
                 <div className="item-description__wrap-div" style={(device)? {minHeight: '400px'} : {minHeight: '600px'}}>

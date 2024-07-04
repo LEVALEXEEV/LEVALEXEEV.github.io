@@ -53,7 +53,7 @@ function CartPage(): JSX.Element {
                                 <article key={item.id}>
                                     <div className="cart-item" >
                                         <div className="item-cart__preview">
-                                            <img src={'img/items/'+item.previewImages[0]}/>
+                                            <img src={item.previewImages[0]}/>
                                         </div>
                                         <div className="item-left">
                                             <h3>{item.title}</h3>
@@ -67,7 +67,7 @@ function CartPage(): JSX.Element {
                                             </div>
                                         </div>
                                         <div className="item-middle">{item.price}</div>
-                                        <div className="item-right"><img src="img/cross.svg" width={'25vmin'} onClick={() => dispatch(setCart(removeItemFromArray(item.id, cart)))}/></div>
+                                        <div className="item-right"><img src="cross.svg" width={'25vmin'} onClick={() => dispatch(setCart(removeItemFromArray(item.id, cart)))}/></div>
                                     </div>
                                     <span></span>
                                 </article>

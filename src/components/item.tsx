@@ -6,7 +6,7 @@ function Item({previewImages, type, article, title, price}: ItemType): JSX.Eleme
         <article className="stuff__card">
             <div className="card__image-wrapper">
                 <Link to={`/item/${article}`}>
-                    <img className="card__image" src={'img/items/'+ previewImages[0]} width="300"  alt="Place image" />
+                    <img className="card__image" src={previewImages[0]} width="300"  alt="Place image" />
                 </Link>
             </div>
             <div className="card__info">

@@ -6,19 +6,19 @@ import { PromocodeType } from "./types/promocode";
 
 export const Videos: VideoType[] = [
     {
-        src: "videos/prev1.MOV",
+        src: "prev1.MOV",
         id: '1',
         description: 'collection',
         link: '/catalog'
     },
     {
-        src: "videos/prev2.MOV",
+        src: "prev2.MOV",
         id: '2',
         description: 'stuff',
         link: '/catalog'
     },
     {
-        src: "videos/prev3.MOV",
+        src: "prev3.MOV",
         id: '3',
         description: 'cup',
         link: '/catalog'
@@ -57,19 +57,19 @@ export const Items: ItemType[] = [
 
 export const SizesTables: SizeTableType[] = [
     {
-        previewImage: 'sizes-tables/longsleeve-net.jpg',
+        previewImage: 'longsleeve-net.jpg',
         type: ItemTypes.Longsleeve
     },
     {
-        previewImage: 'sizes-tables/tee-net.jpg',
+        previewImage: 'tee-net.jpg',
         type: ItemTypes.Tee
     },
     {
-        previewImage: 'sizes-tables/hoodie-net.jpg',
+        previewImage: 'hoodie-net.jpg',
         type: ItemTypes.Hoodie
     },
     {
-        previewImage: 'sizes-tables/shorts-net.jpg',
+        previewImage: 'shorts-net.jpg',
         type: ItemTypes.Shorts
     }
 ]
