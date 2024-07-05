@@ -697,11 +697,13 @@ body .boddy-img__hide {
     -moz-transition: cubic-bezier(0.76, 0.03, 0.33, 1.16) .5s, opacity ease-in-out .5s;
     -o-transition: cubic-bezier(0.76, 0.03, 0.33, 1.16) .5s, opacity ease-in-out .5s;
     transition: cubic-bezier(0.76, 0.03, 0.33, 1.16) .5s, opacity ease-in-out .5s;
+
     img {
       margin: 0 auto;
-      margin: 0 auto;
-      margin: 0 auto;
       width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: 50% 50%;
     }
   }
   #slide0:checked ~ .slider > .slide0,
