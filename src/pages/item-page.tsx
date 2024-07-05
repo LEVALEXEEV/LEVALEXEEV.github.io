@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { Items } from "../data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Background from "../components/background";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { setCart } from "../store/actions";
@@ -14,13 +14,22 @@ import { getHash, removeItemFromArray } from "../utils";
 function ItemPage(): JSX.Element {
     const [activeImg, setActiveImg] = useState(1);
     const [isAdded, setAdded] = useState(false);
+    
     const params = useParams();
     const item = Items.find((item) => item.article === params.article);
+    const [itemID, setItemID] = useState('');
+    const [selectedSize, setSelectedSize] = useState(item?.sizes[0]);
+    
     const device: boolean = useAppSelector((state) => state.device);
     const cart = useAppSelector((state) => state.cartItems);
     const dispatch = useAppDispatch();
     const indexes = [];
     for (var index in item?.previewImages) {indexes.push(Number(index)+1);}
+
+    useEffect(() => {
+        setItemID(item?.article + '_' + getHash(JSON.stringify(item)));
+        setSelectedSize((document.getElementById("size-select") as HTMLInputElement).value);
+    },[selectedSize])
 
     const addToCartHandler = (item: ItemType  | undefined) => {
         if (item) {
@@ -33,8 +42,8 @@ function ItemPage(): JSX.Element {
                     type: item.type,
                     description: item.description,
                     sizes: item.sizes,
-                    selectedSize: (document.getElementById("size-select") as HTMLInputElement).value,
-                    id: item.article + '_' + getHash(JSON.stringify(item))
+                    selectedSize: selectedSize,
+                    id: itemID
                 }
             if (isAdded){
                 dispatch(setCart(removeItemFromArray(targetItem.id, cart)));
@@ -54,7 +63,7 @@ function ItemPage(): JSX.Element {
         <Header backLink="/catalog"/>
         <section className="main__wrap main__item__wrap">
         <div className="item">
-            <div className="item__part item-img-slider__wrap" style={(device)? {maxWidth: '12em', minWidth: '11em'} : {minWidth: '20em'}}>
+            <div className="item__part item-img-slider__wrap" >
                 <div className="wrapper">
                     {indexes.map((i) => (<input key={item?.article + `${i}`} type="radio" name="point" id={"slide" + `${i}`} defaultChecked={i == 1} onChange={() => setActiveImg(i)}></input>))}
                     <div className="slider">
@@ -67,8 +76,8 @@ function ItemPage(): JSX.Element {
                 <label className="back__button" htmlFor={"slide" + (activeImg-1)}><img src="arrow-prev-icon.svg" width={35}/></label>
                 <label className="forward__button" htmlFor={"slide" + (activeImg+1)}><img src="arrow-next-icon.svg" width={35}/></label>
             </div>
-            <div className="item__part item-description__wrap" style={(device)? {maxWidth: '12em', minWidth: '10.5em'} : {minWidth: '500px'}}>
-                <div className="item-description__wrap-div" style={(device)? {minHeight: '400px'} : {minHeight: '600px'}}>
+            <div className="item__part item-description__wrap">
+                <div className="item-description__wrap-div">
                     <article className="item_upper__wrapper">
                         <h1>{item?.title}</h1>
                         <h2>{'ID: ' + item?.article}</h2>
@@ -79,7 +88,7 @@ function ItemPage(): JSX.Element {
                             ? 
                                 <div className="size-selector__wrap">
                                     <label htmlFor="size-select">Size</label>
-                                    <select className = "size-select" name="drop-down" id="size-select">
+                                    <select className = "size-select" name="drop-down" id="size-select" onChange={(evt) => {setSelectedSize(evt.target.value); setAdded(false)}}>
                                         {item?.sizes.map((size) => (<option value={size} key={size}>{size}</option>))}
                                     </select>
                                 </div>
@@ -87,7 +96,7 @@ function ItemPage(): JSX.Element {
                                 undefined
                         }
                     </article>
-                    <article>
+                    <article className="item_bottom__wrapper">
                         <button onClick={() => addToCartHandler(item)}>{(!isAdded)?'Add':'Remove'}</button>
                         <p>{item?.description}</p>
                     </article>
