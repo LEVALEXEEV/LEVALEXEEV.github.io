@@ -86,6 +86,10 @@ body {
     font-size: medium;
 }
 
+.footer__links {
+  min-width: 150px;
+}
+
 .hamburger-menu {
     position: relative;
     width: 30px;
@@ -542,11 +546,11 @@ body .boddy-img__hide {
 /*item page*/
 
 .main__item__wrap {
-  display: grid;
-  ul {
+  display: flex;
+  justify-content: center;
+  .item {
     padding-top: 0.7em;
     padding-bottom: 30px;
-    justify-self: center;
     align-self: center;
     width: 95%;
     height: 100%;
@@ -556,7 +560,7 @@ body .boddy-img__hide {
     border-radius: 15px;
     box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.8);
     
-    li {
+    .item__part {
       display: inline-block;
     }
 

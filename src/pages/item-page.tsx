@@ -53,8 +53,8 @@ function ItemPage(): JSX.Element {
       <>
         <Header backLink="/catalog"/>
         <section className="main__wrap main__item__wrap">
-          <ul>
-            <li className="item-img-slider__wrap" style={(device)? {maxWidth: '12em', minWidth: '11em'} : {minWidth: '20em'}}>
+        <div className="item">
+            <div className="item__part item-img-slider__wrap" style={(device)? {maxWidth: '12em', minWidth: '11em'} : {minWidth: '20em'}}>
                 <div className="wrapper">
                     {indexes.map((i) => (<input key={item?.article + `${i}`} type="radio" name="point" id={"slide" + `${i}`} defaultChecked={i == 1} onChange={() => setActiveImg(i)}></input>))}
                     <div className="slider">
@@ -66,8 +66,8 @@ function ItemPage(): JSX.Element {
                 </div>
                 <label className="back__button" htmlFor={"slide" + (activeImg-1)}><img src="arrow-prev-icon.svg" width={35}/></label>
                 <label className="forward__button" htmlFor={"slide" + (activeImg+1)}><img src="arrow-next-icon.svg" width={35}/></label>
-            </li>
-            <li className="item-description__wrap" style={(device)? {maxWidth: '12em', minWidth: '10.5em'} : {minWidth: '500px'}}>
+            </div>
+            <div className="item__part item-description__wrap" style={(device)? {maxWidth: '12em', minWidth: '10.5em'} : {minWidth: '500px'}}>
                 <div className="item-description__wrap-div" style={(device)? {minHeight: '400px'} : {minHeight: '600px'}}>
                     <article className="item_upper__wrapper">
                         <h1>{item?.title}</h1>
@@ -93,8 +93,8 @@ function ItemPage(): JSX.Element {
                     </article>
                 </div>
                 <Background firstColor={"rgba(100,0,255"} secondColor={"rgba(100,130,255"} thirdColor={"rgba(0,0,255"} />
-            </li>
-          </ul>
+            </div>
+          </div>
         </section>
         <Footer/>
       </>
