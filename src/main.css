@@ -699,6 +699,8 @@ body .boddy-img__hide {
     transition: cubic-bezier(0.76, 0.03, 0.33, 1.16) .5s, opacity ease-in-out .5s;
     img {
       margin: 0 auto;
+      margin: 0 auto;
+      margin: 0 auto;
       width: 100%;
     }
   }
